@@ -10,11 +10,13 @@ NIM  : H1D023038
 Shift  : B/E
 
 ## Dokumentasi
-<img width="1919" height="1004" alt="Screenshot 2025-11-22 201043" src="https://github.com/user-attachments/assets/af6bb80c-09d1-496c-ab66-64b7dded3dfd" />
-<img width="1919" height="1005" alt="Screenshot 2025-11-22 201216" src="https://github.com/user-attachments/assets/c0eda7dc-2dbd-4ecb-9359-4d43f7ceda7d" />
-<img width="1919" height="1005" alt="Screenshot 2025-11-22 200237" src="https://github.com/user-attachments/assets/51e20c89-54ff-43ee-b16e-8e301374951b" />
-<img width="1919" height="1006" alt="Screenshot 2025-11-22 200312" src="https://github.com/user-attachments/assets/2edaafd8-ee17-41f9-89a1-81850b49acba" />
-<img width="1919" height="1002" alt="Screenshot 2025-11-22 200332" src="https://github.com/user-attachments/assets/8c319119-8521-44b1-b087-abe23b35650a" />
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/e7210f47-abc5-4069-a410-f0105cb84eb8" />
+<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/ae3d7e27-fcb8-46f5-8d43-e9df3081fc75" />
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/5bec27c1-194e-4ab8-8eb5-21b2e2f42fec" />
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/18cfbca5-a2f7-412c-a49b-bc50701d1cea" />
+<img width="1919" height="1002" alt="Screenshot 2025-11-22 200332" src="https://github.com/user-attachments/assets/4375375f-0872-4cf7-be71-c1b1b7d304c0" />
+<img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/cd805dd5-9ba2-48f2-b482-5744ebb4b20d" />
+<img width="1919" height="1010" alt="image" src="https://github.com/user-attachments/assets/8b2f9989-6c74-4468-b270-780b5a3020db" />
 
 ## ✨ Fitur Utama
 
