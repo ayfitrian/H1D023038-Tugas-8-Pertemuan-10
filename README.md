@@ -96,9 +96,3 @@ Pastikan lingkungan pengembangan Anda sudah terinstal:
     ```
 
 ---
-
-## 📝 Kontributor
-
-* **[Nama Anda]** - [NIM/Jabatan Anda, contoh: Mahasiswa/Pengembang Utama]
-
-[Opsional: Anda bisa menambahkan Lisensi di bagian bawah jika proyek ini bersifat publik, contoh: Lisensi MIT]
