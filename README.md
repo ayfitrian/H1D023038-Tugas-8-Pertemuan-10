@@ -14,7 +14,7 @@ Shift  : B/E
 <img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/ae3d7e27-fcb8-46f5-8d43-e9df3081fc75" />
 <img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/5bec27c1-194e-4ab8-8eb5-21b2e2f42fec" />
 <img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/18cfbca5-a2f7-412c-a49b-bc50701d1cea" />
-<img width="1919" height="1002" alt="Screenshot 2025-11-22 200332" src="https://github.com/user-attachments/assets/4375375f-0872-4cf7-be71-c1b1b7d304c0" />
+<img width="1919" height="1005" alt="image" src="https://github.com/user-attachments/assets/c2e9ffe5-aabe-48ea-a631-215ee58f0d58" />
 <img width="1919" height="1007" alt="image" src="https://github.com/user-attachments/assets/cd805dd5-9ba2-48f2-b482-5744ebb4b20d" />
 <img width="1919" height="1010" alt="image" src="https://github.com/user-attachments/assets/8b2f9989-6c74-4468-b270-780b5a3020db" />
 
