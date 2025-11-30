@@ -1,4 +1,6 @@
-# 🛍️ TokoKita Mobile App (CRUD Flutter & CodeIgniter 4 API)
+# Tugas Pertemuan 10
+
+## 🛍️ TokoKita Mobile App (CRUD Flutter & CodeIgniter 4 API)
 
 Aplikasi mobile toko sederhana yang dibangun menggunakan **Flutter** dan terintegrasi dengan **RESTful API** yang dibuat menggunakan **CodeIgniter 4**. Proyek ini bertujuan untuk mengimplementasikan dasar-dasar operasi CRUD (Create, Read, Update, Delete) dan otentikasi (Registrasi & Login) dalam pengembangan aplikasi mobile.
 
@@ -98,3 +100,27 @@ Pastikan lingkungan pengembangan Anda sudah terinstal:
     ```
 
 ---
+
+# Tugas Pertemuan 11
+
+## Proses Registrasi
+Proses registrasi dikelola oleh RegistrasiPage dan RegistrasiBloc.
+Berikut alur lengkapnya:
+
+### a. Input Data Pengguna
+
+Screenshot:
+(masukkan gambar di sini)
+
+Penjelasan:
+Pengguna mengisi Nama, Email, Password, dan Konfirmasi Password.
+Validasi dilakukan di RegistrasiPage, meliputi:
+
+Password minimal 6 karakter
+
+Konfirmasi password harus sama
+
+Email wajib format valid
+
+Aksi Kode — registrasi_page.dart:
+Fungsi _submit() dipanggil setelah validasi form sukses.
