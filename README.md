@@ -103,24 +103,51 @@ Pastikan lingkungan pengembangan Anda sudah terinstal:
 
 # Tugas Pertemuan 11
 
-## Proses Registrasi
-Proses registrasi dikelola oleh RegistrasiPage dan RegistrasiBloc.
-Berikut alur lengkapnya:
+## 📝 **1. Proses Registrasi**
 
-### a. Input Data Pengguna
+Dikelola oleh **RegistrasiPage** dan **RegistrasiBloc**.
 
-Screenshot:
-(masukkan gambar di sini)
+---
 
-Penjelasan:
-Pengguna mengisi Nama, Email, Password, dan Konfirmasi Password.
-Validasi dilakukan di RegistrasiPage, meliputi:
+### a. **Input Data Pengguna**
 
-Password minimal 6 karakter
+**Screenshot:**  
+<img width="1919" height="1004" alt="Screenshot 2025-11-30 225155" src="https://github.com/user-attachments/assets/5045d690-ebba-4b38-a7a3-c520613ad7bb" />
 
-Konfirmasi password harus sama
+Pengguna mengisi:
 
-Email wajib format valid
+- Nama
+- Email
+- Password
+- Konfirmasi Password
 
-Aksi Kode — registrasi_page.dart:
-Fungsi _submit() dipanggil setelah validasi form sukses.
+Validasi:
+
+- Password minimal 6 karakter
+- Konfirmasi password harus sama
+- Email valid
+
+---
+
+### b. **Memanggil API Registrasi**
+
+Endpoint:
+/registrasi
+
+Kode:
+
+```dart
+static Future<Registrasi> registrasi({
+  String? nama,
+  String? email,
+  String? password,
+}) async {
+  String apiUrl = ApiUrl.registrasi;
+  var body = {"nama": nama, "email": email, "password": password};
+  var response = await Api().post(apiUrl, body);
+  var jsonObj = json.decode(response.body);
+  return Registrasi.fromJson(jsonObj);
+}
+
+---
+
