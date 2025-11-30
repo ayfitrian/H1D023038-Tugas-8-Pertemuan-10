@@ -148,6 +148,7 @@ static Future<Registrasi> registrasi({
   var jsonObj = json.decode(response.body);
   return Registrasi.fromJson(jsonObj);
 }
+```
 
 ---
 
