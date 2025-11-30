@@ -4,6 +4,7 @@ class Produk {
   String? namaProduk;
   var hargaProduk;
 
+  // Konstruktor sudah aman:
   Produk({this.id, this.kodeProduk, this.namaProduk, this.hargaProduk});
 
   factory Produk.fromJson(Map<String, dynamic> obj) {
