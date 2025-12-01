@@ -231,3 +231,67 @@ Pengguna menginputkan email dan password yang valid, kemudian menekan tombol "Lo
         }
       },
 ```
+---
+## 📝 **3. Proses CRUD**
+
+Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
+
+---
+
+### a. **Read: Menampilkan Daftar Produk (List Produk)**
+
+**Screenshot:**  
+<img width="1918" height="1005" alt="Screenshot 2025-11-30 225305" src="https://github.com/user-attachments/assets/a9c659ea-20ec-4613-9b6f-92cccbca984f" />
+
+**Penjelasan:**  
+
+**Kode Logika BLOC**
+
+### b. **Read: Menampilkan Detail Produk (Show)**
+
+**Screenshot:**  
+<img width="1919" height="1009" alt="Screenshot 2025-11-30 225402" src="https://github.com/user-attachments/assets/ea4b3e89-93d4-4667-b511-0cf913e78cbe" />
+
+
+**Penjelasan:**  
+
+**Kode Logika BLOC**
+
+### c. **Create (Menambah Data Produk)**
+
+**Screenshot:**  
+<img width="1919" height="1006" alt="Screenshot 2025-11-30 225331" src="https://github.com/user-attachments/assets/7d8c4820-dadf-4ed9-8063-d4de418ef054" />
+<img width="1919" height="1008" alt="Screenshot 2025-11-30 225343" src="https://github.com/user-attachments/assets/a1fc7a0e-6cc8-49e9-9565-9137bab5b9d4" />
+
+**Penjelasan:**  
+
+**Kode Logika BLOC**
+
+### d. **Update (Mengubah Data Produk)**
+
+**Screenshot:**  
+<img width="1919" height="1004" alt="Screenshot 2025-11-30 225425" src="https://github.com/user-attachments/assets/7f068e92-42bd-4da8-b95f-6ad13cbe8e78" />
+
+<img width="1919" height="1004" alt="Screenshot 2025-11-30 225439" src="https://github.com/user-attachments/assets/9dd6a1ae-8cef-4324-9ed4-e50127391697" />
+
+**Penjelasan:**  
+
+**Kode Logika BLOC**
+
+### e. **Delete (Menghapus Data Produk)**
+
+**Screenshot:**  
+<img width="1919" height="1010" alt="Screenshot 2025-11-30 225454" src="https://github.com/user-attachments/assets/9782f0dc-3de1-4805-b9e9-66cb499437b0" />
+
+<img width="1919" height="1007" alt="Screenshot 2025-11-30 225509" src="https://github.com/user-attachments/assets/aeaceb38-6b98-44ef-bf3d-14758fdc46e1" />
+
+<img width="1919" height="1006" alt="Screenshot 2025-11-30 225521" src="https://github.com/user-attachments/assets/709e9e8a-664e-439b-80eb-d4a4ad6bcbf8" />
+
+**Penjelasan:**  
+
+**Kode Logika BLOC**
+
+---
+
+## 📝 **4. Proses Logout**
+<img width="1918" height="1005" alt="Screenshot 2025-11-30 225533" src="https://github.com/user-attachments/assets/3970efe6-9df9-40a7-9348-05e6ae63c875" />
