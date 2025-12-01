@@ -152,7 +152,7 @@ static Future<Registrasi> registrasi({
 ### c. **Penanganan Hasil (Pop-up Sukses)**
 
 **Screenshot:**  
-
+<img width="1919" height="1010" alt="Screenshot 2025-11-30 225208" src="https://github.com/user-attachments/assets/c4a01ee0-25d6-43aa-b828-ea767d5dc30d" />
 
 **Penjelasan:**
 - Jika registrasi berhasil, muncul SuccessDialog
@@ -179,6 +179,55 @@ Kode:
     );
 ```
 ---
+## 📝 **2. Proses Login**
+
+Dikelola oleh **LoginPage** dan **LoginBloc**.
 
 ---
 
+### a. **Input Data Pengguna**
+
+**Screenshot:**  
+<img width="1919" height="1007" alt="Screenshot 2025-11-30 225231" src="https://github.com/user-attachments/assets/e49804b2-9f46-4349-89f2-0fb0d20bfa07" />
+
+**Penjelasan:**  
+Pengguna menginputkan email dan password yang valid, kemudian menekan tombol "Login".
+
+**Aksi Kode:**  
+(login_page.dart): Fungsi _submit() dipanggil, yang memanggil LoginBloc.login().
+
+---
+### b. **Penanganan Hasil (Sukses/Gagal)**
+
+**Screenshot:**  
+<img width="1918" height="1005" alt="Screenshot 2025-11-30 225305" src="https://github.com/user-attachments/assets/7fe56e64-fa86-4525-969e-007f321cda54" />
+
+**Penjelasan:**  
+- Sukses: Jika respons API memiliki code == 200, aplikasi menyimpan Token dan User ID menggunakan UserInfo, lalu mengarahkan pengguna ke ProdukPage dengan
+- Gagal: Jika kode bukan 200, message error spesifik dari API ditampilkan di WarningDialog.
+  
+**Kode Penanganan Sukses (login_page.dart):**
+```dart
+(value) async {
+        if (value.code == 200) {
+          // Simpan token dan ID pengguna
+          await UserInfo().setToken(value.token.toString());
+          await UserInfo().setUserID(int.parse(value.userID.toString()));
+
+          // Pindah ke halaman ProdukPage, menghapus histori navigasi
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const ProdukPage()),
+          );
+        } else {
+          // Tampilkan pesan error spesifik dari API
+          showDialog(
+            context: context,
+            // ...
+            builder: (BuildContext context) => WarningDialog(
+              description: value.message ?? "Login gagal, silahkan coba lagi",
+            ),
+          );
+        }
+      },
+```
