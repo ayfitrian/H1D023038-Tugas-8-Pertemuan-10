@@ -247,21 +247,22 @@ Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
 
 **Kode Logika BLOC**
 
-### b. **Read: Menampilkan Detail Produk (Show)**
+### b. **Create (Menambah Data Produk)**
 
 **Screenshot:**  
-<img width="1919" height="1009" alt="Screenshot 2025-11-30 225402" src="https://github.com/user-attachments/assets/ea4b3e89-93d4-4667-b511-0cf913e78cbe" />
-
+<img width="1919" height="1006" alt="Screenshot 2025-11-30 225331" src="https://github.com/user-attachments/assets/7d8c4820-dadf-4ed9-8063-d4de418ef054" />
+<img width="1919" height="1008" alt="Screenshot 2025-11-30 225343" src="https://github.com/user-attachments/assets/a1fc7a0e-6cc8-49e9-9565-9137bab5b9d4" />
 
 **Penjelasan:**  
 
 **Kode Logika BLOC**
 
-### c. **Create (Menambah Data Produk)**
+
+### c. **Read: Menampilkan Detail Produk (Show)**
 
 **Screenshot:**  
-<img width="1919" height="1006" alt="Screenshot 2025-11-30 225331" src="https://github.com/user-attachments/assets/7d8c4820-dadf-4ed9-8063-d4de418ef054" />
-<img width="1919" height="1008" alt="Screenshot 2025-11-30 225343" src="https://github.com/user-attachments/assets/a1fc7a0e-6cc8-49e9-9565-9137bab5b9d4" />
+<img width="1919" height="1009" alt="Screenshot 2025-11-30 225402" src="https://github.com/user-attachments/assets/ea4b3e89-93d4-4667-b511-0cf913e78cbe" />
+
 
 **Penjelasan:**  
 
