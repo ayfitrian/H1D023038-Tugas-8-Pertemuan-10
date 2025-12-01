@@ -244,8 +244,25 @@ Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
 <img width="1918" height="1005" alt="Screenshot 2025-11-30 225305" src="https://github.com/user-attachments/assets/a9c659ea-20ec-4613-9b6f-92cccbca984f" />
 
 **Penjelasan:**  
+Halaman ProdukPage menampilkan daftar produk dengan memanggil ProdukBloc.getProduks() menggunakan FutureBuilder. Setiap item produk (ItemProduk) dapat diklik untuk melihat detail.
 
 **Kode Logika BLOC**
+```dart
+static Future<List<Produk>> getProduks() async {
+    String apiUrl = ApiUrl.listProduk; // http://localhost:8080/produk
+    var response = await Api().get(apiUrl); // Menggunakan GET
+    var jsonObj = json.decode(response.body);
+
+    // Mapping dari JSON array ke List<Produk>
+    List<dynamic> listProduk = (jsonObj as Map<String, dynamic>)['data']; 
+    List<Produk> produks = [];
+
+    for (int i = 0; i < listProduk.length; i++) {
+      produks.add(Produk.fromJson(listProduk[i]));
+    }
+    return produks;
+  }
+```
 
 ### b. **Create (Menambah Data Produk)**
 
@@ -254,19 +271,47 @@ Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
 <img width="1919" height="1008" alt="Screenshot 2025-11-30 225343" src="https://github.com/user-attachments/assets/a1fc7a0e-6cc8-49e9-9565-9137bab5b9d4" />
 
 **Penjelasan:**  
+Di halaman ProdukForm (mode Tambah), pengguna mengisi data. Fungsi simpan() memanggil ProdukBloc.addProduk() menggunakan HTTP POST ke endpoint /produk. Setelah sukses, navigasi kembali ke ProdukPage.
 
 **Kode Logika BLOC**
-
+```dart
+static Future addProduk({Produk? produk}) async {
+    String apiUrl = ApiUrl.createProduk; // http://localhost:8080/produk
+    var body = {
+      "kode_produk": produk!.kodeProduk,
+      "nama_produk": produk.namaProduk,
+      "harga": produk.hargaProduk.toString(),
+    };
+    var response = await Api().post(apiUrl, body); // Menggunakan POST
+    var jsonObj = json.decode(response.body);
+    return jsonObj['status'];
+  }
+```
 
 ### c. **Read: Menampilkan Detail Produk (Show)**
 
 **Screenshot:**  
 <img width="1919" height="1009" alt="Screenshot 2025-11-30 225402" src="https://github.com/user-attachments/assets/ea4b3e89-93d4-4667-b511-0cf913e78cbe" />
 
-
 **Penjelasan:**  
+Saat item produk di ProdukPage diklik, pengguna dinavigasikan ke ProdukDetail. Halaman ini menampilkan detail produk tunggal, serta tombol Edit dan Delete. Data produk (objek Produk) dikirimkan langsung sebagai argumen ke ProdukDetail.
 
 **Kode Logika BLOC**
+```dart
+@override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        // Navigasi ke halaman detail produk saat item diklik
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProdukDetail(produk: produk)),
+        );
+      },
+      // ... Tampilan card item produk
+    );
+  }
+```
 
 ### d. **Update (Mengubah Data Produk)**
 
@@ -276,8 +321,25 @@ Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
 <img width="1919" height="1004" alt="Screenshot 2025-11-30 225439" src="https://github.com/user-attachments/assets/9dd6a1ae-8cef-4324-9ed4-e50127391697" />
 
 **Penjelasan:**  
+Di halaman ProdukForm (mode Ubah), fungsi ubah() dipanggil. Ini memanggil ProdukBloc.updateProduk() menggunakan HTTP PUT ke endpoint /produk/{id}.
 
 **Kode Logika BLOC**
+```dart
+static Future updateProduk({required Produk produk}) async {
+    String apiUrl = ApiUrl.updateProduk(int.parse(produk.id!)); // Endpoint dengan ID
+    
+    var body = {
+      "kode_produk": produk.kodeProduk,
+      "nama_produk": produk.namaProduk,
+      "harga": produk.hargaProduk.toString(),
+    };
+    
+    // Menggunakan PUT
+    var response = await Api().put(apiUrl, jsonEncode(body)); 
+    var jsonObj = json.decode(response.body);
+    return jsonObj['status'];
+  }
+```
 
 ### e. **Delete (Menghapus Data Produk)**
 
@@ -289,10 +351,26 @@ Semua operasi CRUD produk dikelola oleh **ProdukBloc**.
 <img width="1919" height="1006" alt="Screenshot 2025-11-30 225521" src="https://github.com/user-attachments/assets/709e9e8a-664e-439b-80eb-d4a4ad6bcbf8" />
 
 **Penjelasan:**  
+Fungsi confirmHapus() di ProdukDetail menampilkan dialog konfirmasi. Setelah konfirmasi, ProdukBloc.deleteProduk() dipanggil menggunakan HTTP DELETE ke endpoint /produk/{id}. Setelah sukses, navigasi kembali ke ProdukPage dengan menghapus histori rute.
 
 **Kode Logika BLOC**
-
+```dart
+static Future<bool> deleteProduk({int? id}) async {
+    String apiUrl = ApiUrl.deleteProduk(id!); // Endpoint dengan ID
+    var response = await Api().delete(apiUrl); // Menggunakan DELETE
+    var jsonObj = json.decode(response.body);
+    // Mengembalikan nilai boolean status penghapusan
+    return (jsonObj as Map<String, dynamic>)['status'] ?? false;
+  }
+```
 ---
 
 ## 📝 **4. Proses Logout**
+
+**Screenshot:**
 <img width="1918" height="1005" alt="Screenshot 2025-11-30 225533" src="https://github.com/user-attachments/assets/3970efe6-9df9-40a7-9348-05e6ae63c875" />
+
+**Penjelasan:**
+Pengguna mengakses Drawer (menu hamburger) di halaman ProdukPage, kemudian memilih opsi "Logout".
+Aksi Kode (produk_page.dart): Saat ListTile Logout diklik, fungsi berikut dipanggil:
+
