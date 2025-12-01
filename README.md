@@ -374,3 +374,38 @@ static Future<bool> deleteProduk({int? id}) async {
 Pengguna mengakses Drawer (menu hamburger) di halaman ProdukPage, kemudian memilih opsi "Logout".
 Aksi Kode (produk_page.dart): Saat ListTile Logout diklik, fungsi berikut dipanggil:
 
+**Menghapus Sesi Lokal:**
+- Kode Logika BLOC (logout_bloc.dart): Fungsi logout() hanya memanggil UserInfo().logout().
+```dart
+class LogoutBloc {
+  static Future logout() async {
+    await UserInfo().logout(); // Memanggil fungsi penghapus sesi
+  }
+}
+```
+
+- Kode Helpers (user_info.dart): Fungsi logout() bertugas membersihkan data sesi yang tersimpan di perangkat (menggunakan SharedPreferences).
+```dart
+Future logout() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.clear(); // Menghapus semua data sesi (token, userID)
+  }
+```
+**Navigasi Kembali ke Login:**
+
+Setelah sesi berhasil dihapus, aplikasi melakukan navigasi ke LoginPage. Metode navigasi yang digunakan adalah pushAndRemoveUntil, yang memastikan semua halaman sebelumnya (termasuk ProdukPage) dihapus dari tumpukan, sehingga pengguna tidak dapat kembali ke halaman produk tanpa login ulang.
+
+**Kode Navigasi**
+```dart
+onTap: () async {
+                // Logika Logout: panggil bloc, lalu arahkan ke halaman Login
+                await LogoutBloc.logout().then(
+                  (value) => {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                      (route) => false, // Kondisi untuk menghapus semua rute sebelumnya
+                    ),
+                  },
+                );
+              },
+```
