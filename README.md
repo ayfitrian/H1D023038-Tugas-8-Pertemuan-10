@@ -149,6 +149,36 @@ static Future<Registrasi> registrasi({
   return Registrasi.fromJson(jsonObj);
 }
 ```
+### c. **Penanganan Hasil (Pop-up Sukses)**
+
+**Screenshot:**  
+
+
+**Penjelasan:**
+- Jika registrasi berhasil, muncul SuccessDialog
+- Setelah dialog ditutup, pengguna diarahkan untuk melakukan login.
+
+Kode:
+
+```dart
+).then(
+      (value) {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) => SuccessDialog(
+            description: "Registrasi berhasil, silahkan login",
+            okClick: () {
+              // Menutup dialog
+              Navigator.pop(context); 
+            },
+          ),
+        );
+      },
+      // ... Penanganan Error (menampilkan WarningDialog)
+    );
+```
+---
 
 ---
 
